@@ -7,6 +7,11 @@ public class KeyboardRow {
 	public static void main(String args[]){
 		String[] A = {"Hello", "Alaska", "Dad", "Peace"};
 		
+		for(int i = 0; i<A.length;i++){
+			System.out.print(A[i]+" ");
+		}
+		
+		System.out.println();
 		char[] top = {'q','w','e','r','t','y','u','i','o','p'};
 		char[] middle = {'a','s','d','f','g','h','j','k','l'};
 		char[] bottom = {'z','x','c','v','b','n','m'};
@@ -44,10 +49,7 @@ public class KeyboardRow {
 				}
 			
 			}
-			System.out.println(tcount);
-			System.out.println(mcount);
-			System.out.println(bcount);
-			System.out.println();
+
 			if(tcount == A[i].length()||mcount == A[i].length()||bcount == A[i].length())
 			{ans.add(A[i]);}
 		}

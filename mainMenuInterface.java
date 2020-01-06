@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,7 @@ public class mainMenuInterface {
 		//Creating the Frame
         JFrame frame = new JFrame("LeetCode Practice");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
+        frame.setSize(1280, 800);
 
         //Creating the MenuBar and adding components
         JMenuBar mb = new JMenuBar();
@@ -37,11 +38,12 @@ public class mainMenuInterface {
         m1.add(m22);
 
         //Creating the panel at bottom and adding components
-        JPanel panel = new JPanel(); // the panel is not visible in output
-        JLabel label = new JLabel("Console goes here");
+        JPanel panel = new JPanel(); 
+        panel.setLayout(new GridLayout(2,0));
+        JTextArea label = new JTextArea();
         JButton run = new JButton(new AbstractAction("RUN") {
             public void actionPerformed(ActionEvent e) {
-            	 CommonCharacters.main(args);
+            	 label.setText(CommonCharacters.swing());
             }
         });
         panel.add(run);
@@ -50,17 +52,17 @@ public class mainMenuInterface {
 
         // Text Area at the Center
         JPanel center = new JPanel();
-       
 		center.setLayout(new BorderLayout());  //give your JPanel a BorderLayout
-		
 		JTextArea code = new JTextArea(); 
+		JTextArea question = new JTextArea();
+		code.setFont(new Font("Ariel", Font.PLAIN, 14));
 		JScrollPane scroll = new JScrollPane(code); //place the JTextArea in a scroll pane
 		center.add(scroll, BorderLayout.CENTER); 
         
         
         //Left; List of Programs
         JPanel list = new JPanel();
-        list.setLayout(new GridLayout(3,0));
+        list.setLayout(new GridLayout(20,0));
         JButton CommonCharacters = new JButton(new AbstractAction("Common Charaters") {
             public void actionPerformed(ActionEvent e) {
             	 File a = new File("/Users/Matthew/workspace/LeetCode/src/CommonCharacters.java");
@@ -94,9 +96,120 @@ public class mainMenuInterface {
 				}
             }
         });
+        JButton DivisorGame = new JButton(new AbstractAction("Divisor Game") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/DivisorGame.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton DuplicateZeros = new JButton(new AbstractAction("DuplicateZeros") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/DuplicateZeros.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton FizzBuzz = new JButton(new AbstractAction("FizzBuzz") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/FizzBuzz.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton jewelsAndStones = new JButton(new AbstractAction("Jewels and Stones") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/jewelsAndStones.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton KeyboardRow = new JButton(new AbstractAction("KeyboardRow") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/KeyboardRow.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton LongestCommonPrefix = new JButton(new AbstractAction("Longest Common Prefix") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/LongestCommonPrefix.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton LongestSubstring = new JButton(new AbstractAction("Longest Substring") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/LongestSubstring.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton removeOutermostParantheses = new JButton(new AbstractAction("Remove Outermost Parantheses") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/removeOutermostParantheses.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        JButton ReverseString = new JButton(new AbstractAction("Reverse String") {
+            public void actionPerformed(ActionEvent e) {
+            	 File a = new File("/Users/Matthew/workspace/LeetCode/src/ReverseString.java");
+                try {
+					code.setText(getString(a));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+            }
+        });
+        
+        
+        
         list.add(CommonCharacters);
         list.add(CommonCharactersDA);
         list.add(DefangIP);
+        list.add(DivisorGame);
+        list.add(DuplicateZeros);
+        list.add(FizzBuzz);        
+        list.add(jewelsAndStones);
+        list.add(KeyboardRow);
+        list.add(LongestCommonPrefix);
+        list.add(LongestSubstring);
+        list.add(removeOutermostParantheses);
+        list.add(ReverseString);
 
         
         //Adding Components to the frame.

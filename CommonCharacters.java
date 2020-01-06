@@ -14,9 +14,20 @@ public class CommonCharacters {
 		String[] B = {"bella","label","roller"};
 		commonChars(A);
 		commonChars(B);
+		
 	}
-
-	public static void commonChars(String[] A) {
+public static String swing(){
+	String output = "";
+			String[] A = {"cool","lock","cook"};
+			String[] B = {"bella","label","roller"};
+			output = output + convert(commonChars(A)).toString();
+			output = output + convert(commonChars(B)).toString();
+	
+	return output;
+}
+	
+	
+	public static Dictionary commonChars(String[] A) {
 		Dictionary main = makeDictonary(A[0]);
 		
 		for(int i = 0; i<A.length;i++)
@@ -24,7 +35,7 @@ public class CommonCharacters {
 			Dictionary b = makeDictonary(A[i]);
 			compare(main,b);
 		}
-		System.out.println(convert(main));
+		return main;
     }
 	
 	

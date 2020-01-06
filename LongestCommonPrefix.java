@@ -18,6 +18,7 @@ Note:
 
 All given inputs are in lowercase letters a-z.
 
+https://leetcode.com/problems/longest-common-prefix/
  */
 
 public class LongestCommonPrefix {
@@ -32,15 +33,20 @@ public class LongestCommonPrefix {
 		String[] words3 = {"hog","hold","hommage"};
 		System.out.println("The prefix is: "+ LCP(words3));
 		
-		String[] words4 = {"kang","kong","kag"};
+		String[] words4 = {"ca","c","bba","bacb","bcb"};
 		System.out.println("The prefix is: "+ LCP(words4));
 	}
 	
 	public static String LCP(String words[]){
+		//Makes initial prefix
+        if(words.length<=1){return words[0];}
 		String pre = prefix(words[0],words[1]);
 		String word = "";
+		//loops past first check
+        if(words.length<=2){return pre;}
 		for(int i =2; i<words.length;i++){
-			if(!(words[i].contains(pre))){word = prefix(pre,words[i]);}
+			//if the word doesnt have the prefix, check for a sub prefix
+			if(!(words[i].startsWith(pre))){word = prefix(pre,words[i]); pre=word;}
 			else{word=pre;}
 		}
 		return word;
@@ -48,6 +54,7 @@ public class LongestCommonPrefix {
 	
 	public static String prefix(String one, String two){
 		String pre = ""; 
+		//loops prefix
 		for(int j=0;j<one.length();j++){
 			if(j<one.length() && j<two.length() && one.charAt(j)==two.charAt(j)){pre=pre+one.charAt(j);}
 			else{ break;}

@@ -13,6 +13,7 @@ import javax.swing.*;
 public class mainMenuInterface {
 
 	public static void main(String args[]){
+		
 		//Creating the Frame
         JFrame frame = new JFrame("LeetCode Practice");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +48,7 @@ public class mainMenuInterface {
             }
         });
         panel.add(run);
-        panel.add(label); // Components Added using Flow Layout
+        panel.add(label);
 
 
         // Text Area at the Center
